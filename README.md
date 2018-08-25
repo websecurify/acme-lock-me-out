@@ -12,22 +12,14 @@
 	by Websecurify (pdp)
 	
 
-The following application, written on top of MongoDB and NodeJS, demonstrates a simple but not too obvious vulnerability in the this particular technology stack that can be used to successfully bypass the login prompt.
+The following application, written on top of ~~MongoDB~~ Sqlite3 and NodeJS, demonstrates a simple but not too obvious vulnerability in the this particular technology stack that can be used to successfully bypass the login prompt.
 
 # System Requirements
 
 You will need docker installed and fully functional.
 
-# How To Build
-
-Run the following command:
-
-	make docker-build
-
 # How To Use
+    docker build -t lock-me-out:exploitable .
+	docker run -p 49090:49090 lock-me-out:exploitable
 
-Run the following command:
-
-	make docker-run
-
-The application will be available on localhost:49090.
+The application will be available on http://localhost:49090.

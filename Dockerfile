@@ -1,27 +1,12 @@
-FROM ubuntu:14.04
+FROM node:alpine
 
-# ---
+RUN apk add --no-cache sqlite
 
-RUN apt-get update
+RUN mkdir /app
+WORKDIR /app
 
-# ---
-
-RUN apt-get install -y -q build-essential
-RUN apt-get install -y -q mongodb
-RUN apt-get install -y -q nodejs
-RUN apt-get install -y -q npm
-
-# ---
-
-ADD package.json /tmp/package.json
-RUN cd /tmp && npm install
-
-# ---
-
-ADD . /app
-RUN rm -rf /app/node_modules
-RUN cp -a /tmp/node_modules /app/
-
-# ---
-
+COPY . /app
+RUN npm install .
 EXPOSE 49090
+
+CMD ["npm", "start"]
