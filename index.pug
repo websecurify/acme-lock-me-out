@@ -3,32 +3,33 @@ doctype html
 //- --
 
 html
-	head
+    head
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Welcome to Fakebook
+        link(rel="stylesheet" href="style.css" type="text/css")
+    //- --
 
-	//- --
-
-	body
-		div
-			if !message
-				h1 Lock Me Out
-
-				//- --
-
-				p Open, locks, Whoever knocks!
-
-				//- --
-
-				form(method="POST")
-					input(type="text", name="user", autocomplete="off")
-					input(type="password", name="pass", autocomplete="off")
-
-					//- --
-
-					input(type="submit")
-
-				//- --
-
-			else
-				p=message
-
-//- --
+    body(class="login")
+        div#facebook-Bar
+            div#facebook-Frame
+                div#logo
+                    a(href="") Fakebook
+                div#header-main-right
+                      div#header-main-right-nav
+        div.loginbox.radius
+            h2(style="color:#141823; text-align:center;") Welcome!
+            div.loginboxinner.radius
+                div.loginheader
+                    h4.title Connect with friends and the world around you.
+                div.loginform
+                    form#login(action="" method="post")
+                        p
+                            input#email.radius(type="text" name="user" placeholder="Username" value="")
+                        p
+                            input#pass.radius(type="password" name="pass" placeholder="Password")
+                        p
+                            button.radius.title(type="submit" name="client_login") Login
+            div.loginboxinner.radius
+            if message
+                p.message=message

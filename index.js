@@ -57,7 +57,7 @@ sequelize.sync().then(function () {
 	app.use(require('body-parser').urlencoded({
 		extended: true
 	}));
-
+	app.use(express.static('assets'));
 	app.get('/', function (req, res) {
 		res.render('index', {});
 	});
