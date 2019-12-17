@@ -1,8 +1,27 @@
 {
-	"dependencies": {
-		"mongoose": "^3.8.14",
-		"express": "^4.8.2",
-		"body-parser": "^1.6.2",
-		"jade": "^1.5.0"
-	}
+  "name": "acme-lock-me-out",
+  "version": "1.0.0",
+  "description": "NodeJS and MongoDB Login Bruteforce Demo Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vulnis/acme-lock-me-out.git"
+  },
+  "author": "Petko D. Petkov",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/vulnis/acme-lock-me-out/issues"
+  },
+  "homepage": "https://github.com/vulnis/acme-lock-me-out#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "pug": "^2.0.3",
+    "sequelize": "^4.38.0",
+    "sqlite": "3.0.0"
+  }
 }
